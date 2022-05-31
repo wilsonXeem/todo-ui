@@ -9,7 +9,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSignIn = () => {
-    fetch("http://localhost:8000/user/signin", {
+    fetch("https://todo-zim.herokuapp.com/user/signin", {
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -30,7 +30,7 @@ const Login: React.FC = () => {
   };
 
   const handleSignUp = () => {
-    fetch("http://localhost:8000/user/signup", {
+    fetch("https://todo-zim.herokuapp.com/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: email,

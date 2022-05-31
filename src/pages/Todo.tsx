@@ -16,7 +16,7 @@ const Todo: React.FC = () => {
   const [correctSub, setCorrectSub] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:8000/subtasks/subtasks/${id}`)
+    fetch(`https://todo-zim.herokuapp.com/subtasks/subtasks/${id}`)
       .then((response) => response.json())
       .then((json) => {
         setTitle(json.title);
@@ -25,7 +25,7 @@ const Todo: React.FC = () => {
   }, []);
 
   const handleCheck = (_id: any) => {
-    fetch(`http://localhost:8000/subtasks/subtask/${_id}`, {
+    fetch(`https://todo-zim.herokuapp.com/subtasks/subtask/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -36,7 +36,7 @@ const Todo: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    fetch(`http://localhost:8000/subtasks/subtask/${id}`, {
+    fetch(`https://todo-zim.herokuapp.com/subtasks/subtask/${id}`, {
       method: "POST",
       body: JSON.stringify({
         subtask: subtask,

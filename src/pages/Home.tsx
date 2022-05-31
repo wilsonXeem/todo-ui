@@ -8,7 +8,7 @@ export const Home: React.FC = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/tasks/task/${id}`)
+    fetch(`https://todo-zim.herokuapp.com/tasks/task/${id}`)
       .then((response) => response.json())
       .then((json) => {
         setTasks(json.tasks);

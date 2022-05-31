@@ -11,7 +11,7 @@ const Todos: React.FC<Props> = ({ tasks, id }) => {
   const navigate = useNavigate();
   
   const handleSubmit = () => {
-    fetch(`http://localhost:8000/tasks/task/${id}`, {
+    fetch(`https://todo-zim.herokuapp.com/tasks/task/${id}`, {
       method: "POST",
       body: JSON.stringify({
         task: input.toLowerCase(),
